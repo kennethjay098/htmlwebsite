@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mediterranean Cruise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #005f6a;
+            color: #fff;
+            padding: 1em 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2em;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 1em;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 2em 0;
+        }
+
+        section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .destination-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+        }
+
+        .destination {
+            flex: 1 1 calc(33.333% - 1em);
+            background-color: #f4f4f4;
+            padding: 1em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin-top: 1em;
+        }
+
+        form input, form textarea {
+            padding: 0.5em;
+            margin-top: 0.5em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        form button {
+            margin-top: 1em;
+            padding: 0.5em;
+            background-color: #005f6a;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Mediterranean Cruise</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="destination.html">Destinations</a></li>
+                    <li><a href="#itinerary">Journey</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <h2>Sail through the Azure Waters</h2>
+            <p>Experience the charm of the Mediterranean as you visit iconic destinations like Italy, Greece, and Spain.</p>
+            <center><img src="ship.gif" alt="Mediterranean Cruise"></center>
+        </div>
+    </section>
+
+    <section id="destinations">
+        <div class="container">
+            <h2>Our Destinations</h2>
+            <div class="destination-grid">
+                <div class="destination">
+                    <h3>Italy</h3>
+                    <p>Explore historic cities, beautiful coastlines, and indulge in Italian cuisine.</p>
+                </div>
+                <div class="destination">
+                    <h3>Greece</h3>
+                    <p>Discover ancient ruins, stunning islands, and the vibrant Greek culture.</p>
+                </div>
+                <div class="destination">
+                    <h3>Spain</h3>
+                    <p>Enjoy lively cities, picturesque beaches, and delicious Spanish tapas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="itinerary">
+        <div class="container">
+            <h2>Journey</h2>
+            <ul>
+                <li>Day 1: Departure from Barcelona</li>
+                <li>Day 2: Arrival in Rome, Italy</li>
+                <li>Day 3: Explore Athens, Greece</li>
+                <li>Day 4: Visit Palma de Mallorca, Spain</li>
+                <li>Day 5: Return to Barcelona</li>
+            </ul>
+        </div>
+    </section>
+
+    
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mediterranean Cruise. COMPANY OF BVL CORPORATION All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

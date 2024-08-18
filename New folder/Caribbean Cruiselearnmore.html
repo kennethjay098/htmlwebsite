@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caribbean Cruise</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #009688;
+            color: #fff;
+            padding: 1em 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2em;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 1em;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 2em 0;
+        }
+
+        section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .destination-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            justify-content: center;
+        }
+
+        .destination {
+            flex: 1 1 calc(33.333% - 1em);
+            background-color: #ffffff;
+            padding: 1em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .itinerary {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1em;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form label {
+            margin-top: 1em;
+            font-weight: bold;
+        }
+
+        form input, form textarea {
+            padding: 0.5em;
+            margin-top: 0.5em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        form button {
+            margin-top: 1em;
+            padding: 0.5em 2em;
+            background-color: #009688;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Caribbean Cruise</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="destination.html">Destinations</a></li>
+                    <li><a href="#itinerary">Journey</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <h2>Relax on Sun-Kissed Beaches</h2>
+            <p>Discover the beauty of the Caribbean islands, enjoy vibrant cultures, and immerse yourself in stunning landscapes.</p>
+            <center><img src="caribean.gif" alt="Caribbean Cruise"></center>
+        </div>
+    </section>
+
+    <section id="destinations">
+        <div class="container">
+            <h2>Our Destinations</h2>
+            <div class="destination-grid">
+                <div class="destination">
+                    <h3>Bahamas</h3>
+                    <p>Enjoy crystal-clear waters, white sandy beaches, and luxurious resorts.</p>
+                </div>
+                <div class="destination">
+                    <h3>Jamaica</h3>
+                    <p>Experience reggae rhythms, lush landscapes, and warm island hospitality.</p>
+                </div>
+                <div class="destination">
+                    <h3>Barbados</h3>
+                    <p>Relax on beautiful beaches, explore rich history, and savor delicious local cuisine.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="itinerary">
+        <div class="itinerary">
+            <h2>Journey</h2>
+            <ul>
+                <li>Day 1: Departure from Miami</li>
+                <li>Day 2: Nassau, Bahamas</li>
+                <li>Day 3: Montego Bay, Jamaica</li>
+                <li>Day 4: Bridgetown, Barbados</li>
+                <li>Day 5: Return to Miami</li>
+            </ul>
+        </div>
+    </section>
+
+  
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Caribbean Cruise. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

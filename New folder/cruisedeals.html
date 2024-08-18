@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Cruises</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #004080;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+        }
+
+        .nav-bar a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            background: url('path/to/your/background.gif') no-repeat center center;
+            background-size: cover;
+            animation: bounce 2s infinite;
+            transition: background 1s ease-in-out;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            color: black; /* Change text color to black */
+            text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.7); /* Light text shadow for better readability */
+        }
+
+        .section-container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-container .card {
+            background-color: white;
+            width: 30%;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section-container .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-container img {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .section-container h3 {
+            margin: 15px 0 10px;
+            font-size: 1.5rem;
+        }
+
+        .section-container p {
+            text-align: center;
+            color: #666;
+        }
+
+        .section-container a {
+            margin-top: 10px;
+            color: #004080;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .section-container a:hover {
+            text-decoration: underline;
+        }
+
+        .cruise-deals {
+            width: 80%;
+            margin: 40px 0;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cruise-deals h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #004080;
+        }
+
+        .cruise-deals .deal-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cruise-deals .deal-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .cruise-deals .deal-card img {
+            width: 100%;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .cruise-deals .deal-card h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        .cruise-deals .deal-card p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .cruise-deals .deal-card a {
+            color: #004080;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .cruise-deals .deal-card a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #004080;
+            color: white;
+            padding: 20px 0;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .section-container, .cruise-deals {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-container .card, .cruise-deals .deal-card {
+                width: 80%;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+
+        .background-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <img src="ship.gif" alt="Background GIF" class="background-img">
+    <header>
+        <h1>Luxury Cruises</h1>
+        <nav class="nav-bar">
+            <a href="aaa.html">Home</a>
+            <a href="destination.html">Destinations</a>
+            <a href="specialoffers.html">Special Offers</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Explore the World's Most Exotic Destinations</h2>
+    </section>
+
+    <section class="section-container">
+        <div class="card">
+            <img src="Mediterranean.jpg" alt="Mediterranean Cruise">
+            <h3>Mediterranean Cruise</h3>
+            <p>Sail through the azure waters of the Mediterranean, visiting iconic destinations like Italy, Greece, and Spain.</p>
+            <a href="mediterraneanlearnmore.html">Learn More</a>
+        </div>
+
+        <div class="card">
+            <img src="caribbean.png" alt="Caribbean Cruise">
+            <h3>Caribbean Cruise</h3>
+            <p>Relax on the sun-kissed beaches of the Caribbean islands, and experience vibrant cultures and stunning landscapes.</p>
+            <a href="Caribbean Cruiselearnmore.html">Learn More</a>
+        </div>
+
+        <div class="card">
+            <img src="Alaskan Adventure.jpg" alt="Alaskan Adventure">
+            <h3>Alaskan Adventure</h3>
+            <p>Discover the breathtaking wilderness of Alaska with its towering glaciers, majestic wildlife, and endless natural beauty.</p>
+            <a href="alaskanadventurelearnmore.html">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Cruise Deals Section -->
+    <section class="cruise-deals">
+        <h2>Exclusive Cruise Deals</h2>
+        <div class="deal-card">
+            <img src="Summer Special.jpg" alt="Deal 1">
+            <h3>Summer Special - 30% Off</h3>
+            <p>Book your summer cruise now and get 30% off on selected routes. Enjoy a sunny adventure with incredible savings!</p>
+            <a href="booknow.html">Book Now</a>
+        </div>
+
+        <div class="deal-card">
+            <img src="Winter Getaway - Free Upgrades.jpg" alt="Deal 2">
+            <h3>Winter Getaway - Free Upgrades</h3>
+            <p>Experience a luxurious winter cruise with free cabin upgrades. Don’t miss out on this limited-time offer!</p>
+            <a href="findoutmore.html">Find Out More</a>
+        </div>
+
+        <div class="deal-card">
+            <img src="Family Fun - Kids Cruise Free.jpg" alt="Deal 3">
+            <h3>Family Fun - Kids Cruise Free</h3>
+            <p>Bring the whole family and enjoy a fantastic cruise where kids travel for free. Fun for everyone at sea!</p>
+            <a href="familylearnmore.html">Learn More</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Luxury Cruises. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

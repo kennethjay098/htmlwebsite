@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Hawaii</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #ff6f00;
+            color: #fff;
+            padding: 1em 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2em;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 1em;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 2em 0;
+        }
+
+        section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .destination-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            justify-content: center;
+        }
+
+        .destination {
+            flex: 1 1 calc(33.333% - 1em);
+            background-color: #ffffff;
+            padding: 1em;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .itinerary {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1em;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Explore Hawaii</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="destination.html">Destinations</a></li>
+                    <li><a href="#itinerary">Journey</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <h2>Experience the Paradise of the Hawaiian Islands</h2>
+            <p>Discover stunning landscapes, volcanic activity, and vibrant culture across Hawaii's beautiful islands.</p>
+            <center><img src="hawaii.jpg" alt="Hawaiian Islands"></center>
+        </div>
+    </section>
+
+    <section id="destinations">
+        <div class="container">
+            <h2>Our Destinations</h2>
+            <div class="destination-grid">
+                <div class="destination">
+                    <h3>Oahu</h3>
+                    <p>Home to Honolulu and the famous Waikiki Beach, Oahu offers both vibrant city life and stunning natural beauty.</p>
+                </div>
+                <div class="destination">
+                    <h3>Maui</h3>
+                    <p>Explore lush landscapes, scenic drives, and breathtaking beaches in Maui, known for its luxury resorts and outdoor adventures.</p>
+                </div>
+                <div class="destination">
+                    <h3>Big Island</h3>
+                    <p>Experience the dramatic volcanic landscapes, black sand beaches, and diverse climates on Hawaii’s largest island.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="itinerary">
+        <div class="itinerary">
+            <h2>Journey</h2>
+            <ul>
+                <li>Day 1: Arrival in Honolulu, Oahu</li>
+                <li>Day 2: Explore Oahu's beaches and cultural sites</li>
+                <li>Day 3: Flight to Maui</li>
+                <li>Day 4: Discover Maui's natural beauty and adventure spots</li>
+                <li>Day 5: Flight to Big Island</li>
+                <li>Day 6: Experience volcanic landscapes and local culture</li>
+                <li>Day 7: Return home</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Explore Hawaii. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

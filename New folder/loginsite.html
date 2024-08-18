@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login Successful</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        .success-container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .success-container h1 {
+            color: #28a745;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .success-container p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .success-container .checkmark {
+            font-size: 50px;
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .success-container p.redirecting {
+            animation: blink 1s infinite;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="success-container">
+    <div class="checkmark">&#10003;</div> <!-- Checkmark for visual success -->
+    <h1>Login Successful!</h1>
+    <p>Welcome to BVL CORPORATION CRUISES</p>
+    <p class="redirecting">Redirecting in <span id="countdown">5</span> seconds...</p>
+</div>
+
+<script>
+    // Countdown and redirect logic
+    let countdown = 5;
+    const countdownElement = document.getElementById('countdown');
+    const redirectUrl = 'booknow.html'; // Change this to the page you want to redirect to
+
+    const interval = setInterval(() => {
+        countdown--;
+        countdownElement.textContent = countdown;
+
+        if (countdown === 0) {
+            clearInterval(interval);
+            window.location.href = redirectUrl; // Redirect to welcome page
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>

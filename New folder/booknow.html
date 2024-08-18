@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now - Luxury Cruises</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #004080;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+        }
+
+        .nav-bar a:hover {
+            text-decoration: underline;
+        }
+
+        .booking-container {
+            width: 80%;
+            max-width: 800px;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 40px 0;
+        }
+
+        .booking-container h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #004080;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        button.submit-btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button.submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #004080;
+            color: white;
+            padding: 20px 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .result, .error {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .result p, .error p {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .error p {
+            color: #ff0000;
+        }
+
+        .result div {
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .booking-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Luxury Cruises</h1>
+        <nav class="nav-bar">
+            <a href="aaa.html">Home</a>
+            <a href="destination.html">Destinations</a>
+            <a href="specialoffers.html">Special Offers</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <div class="booking-container">
+        <h2>Book Your Cruise</h2>
+        <form id="bookingForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+            </div>
+
+            <div class="form-group">
+                <label for="destination">Destination</label>
+                <select id="destination" name="destination" required>
+                    <option value="" disabled selected>Select your destination</option>
+                    <option value="Mediterranean">Mediterranean</option>
+                    <option value="Caribbean">Caribbean</option>
+                    <option value="Alaska">Alaska</option>
+                    <option value="Hawaii">Hawaii</option>
+                    <option value="South Pacific">South Pacific</option>
+                    <option value="Asia">Asia</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="dates">Preferred Dates</label>
+                <input type="text" id="dates" name="dates" placeholder="e.g., June 1 - June 15" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Additional Requests or Questions</label>
+                <textarea id="message" name="message" rows="4" placeholder="Any special requests or questions?"></textarea>
+            </div>
+
+            <button type="button" class="submit-btn" onclick="submitBooking()">Submit Booking</button>
+        </form>
+
+        <div id="result" class="result">
+            <p id="price"></p>
+            <p>Thank you for booking with BVL CORPORATION!</p>
+            <div id="details"></div>
+        </div>
+
+        <div id="error" class="error">
+            <p>Please fill out all required fields.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Luxury Cruises. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function submitBooking() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var destination = document.getElementById('destination').value;
+            var dates = document.getElementById('dates').value;
+            var message = document.getElementById('message').value;
+            var price;
+
+            // Clear previous error and result messages
+            document.getElementById('error').style.display = 'none';
+            document.getElementById('result').style.display = 'none';
+
+            // Check for empty fields
+            if (!name || !email || !phone || !destination || !dates) {
+                document.getElementById('error').style.display = 'block';
+                return; // Stop execution if there are errors
+            }
+
+            switch (destination) {
+                case 'Mediterranean':
+                    price = '₱144,000';
+                    break;
+                case 'Caribbean':
+                    price = '₱90,000';
+                    break;
+                case 'Alaska':
+                    price = '₱75,000';
+                    break;
+                case 'Hawaii':
+                    price = '₱150,000';
+                    break;
+                case 'South Pacific':
+                    price = '₱58,000';
+                    break;
+                case 'Asia':
+                    price = '₱29,000';
+                    break;
+                default:
+                    price = 'N/A';
+            }
+
+            var details = `<p><strong>Name:</strong> ${name}</p>
+                           <p><strong>Email:</strong> ${email}</p>
+                           <p><strong>Phone Number:</strong> ${phone}</p>
+                           <p><strong>Destination:</strong> ${destination}</p>
+                           <p><strong>Preferred Dates:</strong> ${dates}</p>
+                           <p><strong>Additional Requests:</strong> ${message}</p>`;
+
+            document.getElementById('price').textContent = 'Price: ' + price;
+            document.getElementById('details').innerHTML = details;
+            document.getElementById('result').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
